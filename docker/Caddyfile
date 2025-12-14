@@ -2,6 +2,8 @@
     root * /var/www/korka
     encode gzip zstd
 
+    try_files /assets{path} {path}
+
     php_fastcgi php:9000
 
     file_server
