@@ -8,3 +8,22 @@
 
     file_server
 }
+
+http://korka.magwoo.ru:81 {
+    root * /var/www/korka
+    encode gzip zstd
+
+    try_files /assets{path} {path}
+
+    php_fastcgi php:9000
+
+    file_server
+}
+
+http://database.magwoo.ru:81 {
+    basicauth {
+        admin $2a$12$g6ZbOPOlIwWS/dqo0qpho..FXPIvquWkJ8eyQa8eHruhF.OC08Sza
+    }
+
+    reverse_proxy http://phpmyadmin
+}

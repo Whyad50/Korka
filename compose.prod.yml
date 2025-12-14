@@ -21,8 +21,17 @@ services:
       MYSQL_DATABASE: korka
       MYSQL_USER: korka
       MYSQL_PASSWORD: korka
-    ports:
-      - 3306:3306
     volumes:
       - ./data/database:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root
+    depends_on:
+      - mysql
 
