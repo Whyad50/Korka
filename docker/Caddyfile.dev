@@ -1,0 +1,8 @@
+:80 {
+    root * /var/www/korka
+    encode gzip zstd
+
+    php_fastcgi php:9000
+
+    file_server
+}
