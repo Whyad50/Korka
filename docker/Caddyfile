@@ -9,7 +9,7 @@
     file_server
 }
 
-http://korka.magwoo.ru:81 {
+korka.magwoo.ru {
     root * /var/www/korka
     encode gzip zstd
 
@@ -20,7 +20,7 @@ http://korka.magwoo.ru:81 {
     file_server
 }
 
-http://database.magwoo.ru:81 {
+database.magwoo.ru {
     basicauth {
         admin $2a$12$g6ZbOPOlIwWS/dqo0qpho..FXPIvquWkJ8eyQa8eHruhF.OC08Sza
     }
