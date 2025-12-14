@@ -25,9 +25,9 @@ try {
     <header>
         <div class="container header-container">
             <div class="logo-container">
-                <!-- Место для логотипа -->
-                <div class="placeholder-logo">К</div>
-              <img src="media/Лого.png" alt="Корочки.есть" class="logo-img"> 
+                <a href="index.php">
+                    <img src="assets/media/logo.jpg" alt="Корочки.есть" class="logo-img">
+                </a>
                 <a href="index.php" class="logo-text">Корочки.есть</a>
             </div>
             <nav>

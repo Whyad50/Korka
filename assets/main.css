@@ -84,7 +84,10 @@
         .logo-img {
             height: 40px;
             width: auto;
+            max-width: 140px;
             border-radius: 4px;
+            object-fit: contain;
+            display: block;
         }
 
         .logo-text {

@@ -105,18 +105,28 @@
 
         // Загрузка логотипов
         function loadLogo() {
-            // Пример загрузки логотипа (раскомментировать и указать путь)
-       
             const headerLogo = document.querySelector('.logo-img');
             const footerLogo = document.querySelector('.footer-logo-img');
-            
-            // Заменить заглушки на реальные изображения
-            document.querySelector('.placeholder-logo').style.display = 'none';
-            document.querySelector('.placeholder-logo.footer').style.display = 'none';
-            
-            headerLogo.src = '';
-            footerLogo.src = 'path/to/your/logo-white.png';
-       
+            const placeholder = document.querySelector('.placeholder-logo');
+            const footerPlaceholder = document.querySelector('.placeholder-logo.footer');
+
+            // Не трогаем корректный src, но добавляем запасной путь, если он пустой
+            if (headerLogo && !headerLogo.getAttribute('src')) {
+                headerLogo.src = 'assets/media/logo.jpg';
+            }
+
+            // Показываем логотип в футере только если тег присутствует
+            if (footerLogo) {
+                footerLogo.src = 'assets/media/logo.jpg';
+                if (footerPlaceholder) {
+                    footerPlaceholder.style.display = 'none';
+                }
+            }
+
+            // Если есть заглушка в хедере/футере и нет картинок, оставляем её на месте
+            if (placeholder && !footerLogo) {
+                placeholder.style.display = 'flex';
+            }
         }
 
         // Инициализация при загрузке
